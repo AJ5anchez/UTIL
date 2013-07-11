@@ -1,0 +1,11 @@
+#Install HEROKU
+
+wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
+ssh-keygen -t rsa
+
+heroku keys:add
+
+heroku create
+
+git push heroku master
