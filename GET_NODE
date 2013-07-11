@@ -1,0 +1,40 @@
+#!/bin/bash
+
+#This script is to be executed in the remote EC2
+#instance to get all what is needed to work with
+#node.js (includes npm)
+
+#This script has been taken from
+#lecture_slides_lecture3-linux-ssjs-v2.pdf
+#part of the course Startup Engineering
+#from Stanford University, through coursera
+#(Summer 2013)
+
+#It installs: python, g++, make, node, and npm
+
+#See if there are Ubuntu updates
+sudo apt-get update
+
+#Install python, g++, and make
+sudo apt-get install -y python-software-properties python g++ make
+
+#Add a new repository for apt-get to search
+sudo add-apt-repository ppa:chris-lea/node.js
+
+#Update apt-get's knowledge of which packages are where
+sudo apt-get update
+
+#Now install nodejs and npm
+sudo apt-get install -y nodejs
+
+#Show versions of node.js and npm
+echo "npm version: "
+npm --version
+
+echo "node.js version: "
+node --version
+
+#That's it!
+#T.B.T.G.
+
+exit
